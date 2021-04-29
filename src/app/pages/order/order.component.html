@@ -1,0 +1,23 @@
+<div class="order-wrapper">
+  <div class="form-box">
+    <div class="form-title">Please enter your data to order and we will contact you soon!</div>
+    <div class="form-body">
+      <form [formGroup]="signUpForm" (ngSubmit)="submitForm()">
+        <label>Name:</label>
+        <input type="text" formControlName="name" required>
+        <br>
+
+        <label>Email:</label>
+        <input type="email" formControlName="email" required>
+        <br>
+
+        <label>Phone number:</label>
+        <input type="number" formControlName="number" required>
+        <br>
+
+        <button type="submit" [disabled]="signUpForm.invalid" [ngClass]="{'btn-disabled': signUpForm.invalid}">Submit</button>
+        <div class="error" *ngIf="signUpForm.invalid && (signUpForm.dirty || signUpForm.touched)">Invalid data!</div>
+      </form>
+    </div>
+  </div>
+</div>

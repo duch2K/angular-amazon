@@ -1,0 +1,34 @@
+<div class="cart_products">
+    <span class="price">Price</span>
+    <div class="cart_product" *ngFor="let p of items">
+       <img src="{{p.image}}" alt="" class="cart_product_img">
+       <div class="cart_product_info">
+           
+           <span class="cart_product_title">
+            {{p.title}}
+
+           </span>
+           <img src="https://cdn2.hubspot.net/hubfs/4567260/0_KZ8hBw7pQZFFt2Mt.png" alt="img">
+           <span class="cart_product_in_stock">In Stock</span>
+          
+          <div class="cart_options">
+            <div class="cart_dropdown">
+
+       
+              </div>
+              <a (click)="removeItem(p)"> Delete</a>
+
+          </div>
+          
+       </div>
+       <div class="cart_products_price">
+           <span> <b>${{p.price}}</b> </span>
+       </div>
+
+    </div>
+    <div class="cart_products_subtotal">
+        <span>Subtotal ({{cart.getCartLength()}} items):
+             <b>${{cart.getTotal()}}</b> </span>
+
+    </div>
+</div>

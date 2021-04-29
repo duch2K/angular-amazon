@@ -1,0 +1,10 @@
+<div class="subtotal" *ngIf="cart.getCartLength() > 0">
+    <span>Subtotal: ({{cart.getCartLength()}} items) 
+        <b>${{cart.getTotal()}}</b></span>
+        <div class="subtotal_gift">
+            <input type="checkbox"/>
+           <span>This order contains a gift</span> 
+        </div>
+        <!-- <a href="/cart">Order</a> -->
+        <button routerLink="/cart">Order</button>
+</div>

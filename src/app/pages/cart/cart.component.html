@@ -1,0 +1,16 @@
+<div class="cart">
+    <div class="cart_left">
+        <div class="cart_not_empty" *ngIf="cart.getCartLength() != 0; else emptyCart">
+            <span><b>Shopping Cart</b></span>
+            <app-cart-products [items]="items" (deleteEvent)="deleteEventHandler($event)"></app-cart-products>
+        </div>
+        <ng-template class="cart_empty" #emptyCart>
+            <h2>Your shopping basket is empty</h2>
+            <span>You have no items in your basket</span>
+        </ng-template>
+    </div>
+    <div class="cart_right">
+     <app-cart-total></app-cart-total>
+
+    </div>
+</div>
